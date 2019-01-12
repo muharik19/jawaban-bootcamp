@@ -1,0 +1,5 @@
+SELECT categories.id AS person_id, categories.name,
+GROUP_CONCAT(hobbies.name SEPARATOR ', ') AS person_hobbies
+FROM categories, hobbies
+WHERE categories.id = hobbies.person_id
+GROUP BY categories.id
